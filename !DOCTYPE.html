@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Casino</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #222; color: #fff; text-align: center; }
+    header { padding: 20px; background: #444; }
+    .game { margin: 40px auto; padding: 20px; background: #333; border-radius: 10px; width: 350px; }
+    button { padding: 10px 20px; margin-top: 20px; cursor: pointer; }
+    .reels { font-size: 2rem; margin: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎰 Demo Casino</h1>
+    <p>Play for fun, earn points!</p>
+  </header>
+
+  <!-- Slot Machine -->
+  <div class="game">
+    <h2>Slot Machine</h2>
+    <div class="reels" id="reels">🍒 🍋 🍊</div>
+    <button onclick="spin()">Spin</button>
+    <p id="slotResult"></p>
+  </div>
+
+  <!-- Dice Roll -->
+  <div class="game">
+    <h2>Dice Roll 🎲</h2>
+    <div id="dice">🎲</div>
+    <button onclick="rollDice()">Roll</button>
+    <p id="diceResult"></p>
+  </div>
+
+  <!-- Coin Flip -->
+  <div class="game">
+    <h2>Coin Flip 🪙</h2>
+    <div id="coin">🪙</div>
+    <button onclick="flipCoin()">Flip</button>
+    <p id="coinResult"></p>
+  </div>
+
+  <!-- Roulette -->
+  <div class="game">
+    <h2>Roulette 🎡</h2>
+    <button onclick="spinRoulette()">Spin Wheel</button>
+    <p id="rouletteResult"></p>
+  </div>
+
+  <!-- Blackjack -->
+  <div class="game">
+    <h2>Blackjack 🃏</h2>
+    <p id="bjStatus">Click "Deal" to start</p>
+    <button onclick="deal()">Deal</button>
+    <button onclick="hit()">Hit</button>
+    <button onclick="stand()">Stand</button>
+    <p id="bjResult"></p>
+  </div>
+
+  <script>
+    const symbols = ["🍒","🍋","🍊","⭐","💎"];
+    let points = 0;
+
+    // Slot Machine
+    function spin() {
+      let reel1 = symbols[Math.floor(Math.random()*symbols.length)];
+      let reel2 = symbols[Math.floor(Math.random()*symbols.length)];
+      let reel3 = symbols[Math.floor(Math.random()*symbols.length)];
+      document.getElementById("reels").text
